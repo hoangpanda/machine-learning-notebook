@@ -7,6 +7,7 @@ from sklearn.cluster import KMeans
 def kmeans_display(X, label):
   K = np.amax(label) + 1
   X0 = X[label == 0, :]
+  #print(type(X0))
   X1 = X[label == 1, :]
   X2 = X[label == 2, :]
 
@@ -54,7 +55,7 @@ def kmeans(X, K):
 
 def kmeans_by_sklearn(X, K):
   kmeans = KMeans(n_clusters=K, random_state=0).fit(X)
-  print(kmeans.cluster_centers_)
+  #print(kmeans.cluster_centers_)
   kmeans_display(X, kmeans.predict(X))
 
 # init 
