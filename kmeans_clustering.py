@@ -10,7 +10,7 @@ def kmeans_display(X, label):
   #print(type(X0))
   X1 = X[label == 1, :]
   X2 = X[label == 2, :]
-
+  
   plt.plot(X0[:, 0], X0[:, 1], 'b^', markersize = 4, alpha = .5)
   plt.plot(X1[:, 0], X1[:, 1], 'go', markersize = 4, alpha = .5)
   plt.plot(X2[:, 0], X2[:, 1], 'rs', markersize = 4, alpha = .5)
@@ -70,12 +70,13 @@ X = np.concatenate((X0,X1,X2), axis = 0)
 K = 3
 
 original_label = np.asarray([0]*N + [1]*N + [2]*N).T
+print(X)
 
 # algorithm
-centers, labels, it = kmeans(X,K)
+#centers, labels, it = kmeans(X,K)
 #kmeans_display(X, labels[-1])
-print(centers[-1])
+#print(centers[-1])
 
-kmeans_by_sklearn(X,K)
+#kmeans_by_sklearn(X,K)
 
 
