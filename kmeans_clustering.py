@@ -1,8 +1,8 @@
 from __future__ import print_function
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.spatial.distance import cdist
-from sklearn.cluster import KMeans
+#import matplotlib.pyplot as plt
+#from scipy.spatial.distance import cdist
+#from sklearn.cluster import KMeans
 
 def kmeans_display(X, label):
   K = np.amax(label) + 1
@@ -57,7 +57,7 @@ def kmeans_by_sklearn(X, K):
   kmeans = KMeans(n_clusters=K, random_state=0).fit(X)
   #print(kmeans.cluster_centers_)
   kmeans_display(X, kmeans.predict(X))
-
+  
 # init 
 means = np.array([[2,2], [8,3], [3,6]])
 cov = [[1,0],[0,1]]
@@ -68,9 +68,10 @@ X2 = np.random.multivariate_normal(means[2], cov, N)
 
 X = np.concatenate((X0,X1,X2), axis = 0)
 K = 3
-
-original_label = np.asarray([0]*N + [1]*N + [2]*N).T
 print(X)
+
+#original_label = np.asarray([0]*N + [1]*N + [2]*N).T
+#print(X)
 
 # algorithm
 #centers, labels, it = kmeans(X,K)
